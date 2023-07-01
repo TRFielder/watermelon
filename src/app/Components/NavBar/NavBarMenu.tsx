@@ -26,7 +26,9 @@ const NavBarMenu = () => {
 				</Center>
 				<br />
 				<MenuDivider />
-				<MenuItem>Your Mangos</MenuItem>
+				<MenuItem as="a" href="/dashboard">
+					My Melon
+				</MenuItem>
 				<MenuItem>Account Settings</MenuItem>
 				<MenuItem onClick={() => signOut({ callbackUrl: "/" })}>Sign Out</MenuItem>
 			</MenuList>

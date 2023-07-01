@@ -5,14 +5,14 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 
 const baseStyle = definePartsStyle({
 	list: {
-		bg: "#023047",
-		color: "EDF2F7",
+		bg: "#0E395C",
+		color: "white",
 	},
 	item: {
-		bg: "#023047",
+		bg: "#08395C",
 		_hover: {
-			bg: "#8ECAE6",
-			color: "#1A202C",
+			bg: "#4FA783",
+			color: "white",
 		},
 	},
 });

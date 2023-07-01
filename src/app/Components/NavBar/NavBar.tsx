@@ -11,7 +11,7 @@ const NavBar = () => {
 		<>
 			<Box bg={"gray.800"} px={4}>
 				<Flex h={16} align={"center"} justify={"space-between"}>
-					<Box>Mango</Box>
+					<Box>Watermelon</Box>
 
 					<Flex align={"center"}>
 						<Stack direction={"row"} spacing={7}>
