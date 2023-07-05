@@ -5,8 +5,6 @@ import { signOut, useSession } from "next-auth/react";
 const NavBarMenu = () => {
 	const { data: session } = useSession();
 
-	console.log(session);
-
 	return (
 		<Menu>
 			<MenuButton as={Button} rounded={"full"} variant={"link"} cursor={"pointer"} minW={0}>
