@@ -5,6 +5,7 @@ import CheckIn from "../Components/CheckIn/CheckIn";
 
 const Dashboard = async () => {
 	const session = await getServerSession(authOptions);
+	console.log(session);
 
 	return (
 		<Flex direction="column" align="center" maxW="50%" justify="space-evenly" height="100%">

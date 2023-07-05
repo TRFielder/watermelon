@@ -1,12 +1,11 @@
 "use client";
 import { FormEvent, ChangeEvent, useState } from "react";
-import { Stack, FormControl, Input, Button, Heading, Text, Container, Flex } from "@chakra-ui/react";
+import { Stack, FormControl, Input, Button, Heading, Container, Flex } from "@chakra-ui/react";
 
 const CheckIn = () => {
 	const [value, setValue] = useState<number>(0);
 
 	const handleText = (e: ChangeEvent<HTMLInputElement>) => {
-		console.log(value);
 		setValue(Number(e.target.value));
 	};
 
