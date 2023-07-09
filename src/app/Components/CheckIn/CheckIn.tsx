@@ -1,9 +1,17 @@
 "use client";
-import { FormEvent, ChangeEvent, useState } from "react";
+import { FormEvent, ChangeEvent, useState, useEffect } from "react";
 import { Stack, FormControl, Input, Button, Heading, Container, Flex } from "@chakra-ui/react";
+import { Users } from "@/dataFetching/apiHandler";
 
 const CheckIn = () => {
 	const [value, setValue] = useState<number>(0);
+
+	useEffect(() => {
+		(async () => {
+			const info = await Users.getUser();
+			console.log(info);
+		})();
+	}, []);
 
 	const handleText = (e: ChangeEvent<HTMLInputElement>) => {
 		setValue(Number(e.target.value));
