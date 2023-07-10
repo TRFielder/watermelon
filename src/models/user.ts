@@ -35,4 +35,4 @@ export interface ICheckIn {
 	weight: number;
 }
 
-export default mongoose.models.user || mongoose.model("user", userSchema);
+export default mongoose.models.user || mongoose.model<IUser>("user", userSchema);

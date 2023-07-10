@@ -1,4 +1,4 @@
-import { IUser } from "@/models/user";
+import { ICheckIn, IUser } from "@/models/user";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASEURL;
 
@@ -10,7 +10,7 @@ const requests = {
 	},
 
 	post: async (data: any, url: string) => {
-		console.log("We got to this point");
+		console.log(data);
 		const response = await fetch(url, {
 			method: "POST",
 			mode: "cors",
@@ -31,6 +31,8 @@ const requests = {
 const Users = {
 	getUser: () => requests.get(`${baseUrl}/user`),
 	addUser: (userData: IUser) => requests.post(userData, `${baseUrl}/user`),
+	checkIn: (value: ICheckIn) => requests.post(value, `${baseUrl}/user/checkins`),
+	getCheckIns: () => requests.get(`${baseUrl}/user/checkins`),
 };
 
 export { Users };

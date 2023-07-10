@@ -2,6 +2,7 @@ import { Flex, Text, Heading } from "../Components/ClientChakra";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import CheckIn from "../Components/CheckIn/CheckIn";
+import Graph from "../Components/Chart/Graph";
 
 const Dashboard = async () => {
 	const session = await getServerSession(authOptions);
@@ -12,6 +13,7 @@ const Dashboard = async () => {
 			<Text align="center" margin="10px">
 				{session?.user?.name}
 			</Text>
+			<Graph />
 			<CheckIn />
 		</Flex>
 	);

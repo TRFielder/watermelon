@@ -2,24 +2,35 @@
 import { FormEvent, ChangeEvent, useState, useEffect } from "react";
 import { Stack, FormControl, Input, Button, Heading, Container, Flex } from "@chakra-ui/react";
 import { Users } from "@/dataFetching/apiHandler";
+import { ICheckIn } from "@/models/user";
 
 const CheckIn = () => {
 	const [value, setValue] = useState<number>(0);
-
-	useEffect(() => {
-		(async () => {
-			const info = await Users.getUser();
-			console.log(info);
-		})();
-	}, []);
 
 	const handleText = (e: ChangeEvent<HTMLInputElement>) => {
 		setValue(Number(e.target.value));
 	};
 
+	useEffect(() => {
+		(async () => {
+			const response = await Users.getCheckIns();
+			const data = response.data;
+			const lastCheckIn: ICheckIn = data.at(-1);
+			setValue(lastCheckIn.weight);
+		})();
+	}, []);
+
 	const handleSubmit = (e: FormEvent<HTMLInputElement>) => {
 		e.preventDefault();
+		const checkIn: ICheckIn = {
+			submitted: new Date(),
+			weight: value,
+		};
 		console.warn("The entered value is: ", value, " kg");
+		(async () => {
+			const response = await Users.checkIn(checkIn);
+			console.log(response);
+		})();
 	};
 
 	return (

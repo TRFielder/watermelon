@@ -34,7 +34,6 @@ export const authOptions: NextAuthOptions = {
 			} else {
 				console.log("The user already exists, you can just log in");
 			}
-
 			return true;
 		},
 	},
