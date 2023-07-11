@@ -31,8 +31,8 @@ const Hero = () => {
 						</Text>{" "}
 					</Heading>
 					<Text fontSize={{ base: "md", lg: "lg" }} color={"white"}>
-						Mango is a tool to track your enjoyment of the manga you read. Rate each chapter and compare it against others - share your opinion with
-						your friends or see how your views stack up against the global average.
+						Watermelon is a tool to track your bodyweight over time. Log your entries and see the graph fill out as you add data over days, months
+						and years
 					</Text>
 					<Stack direction={{ base: "column", md: "row" }} spacing={4}>
 						<HeroButtons />
